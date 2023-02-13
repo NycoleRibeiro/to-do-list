@@ -14,11 +14,13 @@ function App() {
   const handleAddTask = (taskName: string) => {
     let newList = [...list];
     newList.push({
-      id: list.length + 1,
+      // pega o ultimo id da lista e soma 1
+      id: list[list.length - 1].id + 1,
       name: taskName,
       done: false
     });
     setList(newList);
+    console.log(newList);
   }
 
   const handleTaskChange = (id: number, done: boolean) => {
@@ -29,6 +31,18 @@ function App() {
       }
     }
     setList(newList);
+    console.log(newList);
+  }
+
+  const handleDeleteTask = (id: number) => {
+    let newList = [...list];
+    for (let i in newList) {
+      if (newList[i].id === id) {
+        newList.splice(parseInt(i), 1);
+      }
+    }
+    setList(newList);
+    console.log(newList);
   }
 
   return (
@@ -45,6 +59,7 @@ function App() {
           key={index} 
           item={item} 
           onChange={handleTaskChange}
+          onDelete={handleDeleteTask}
           />
         ))}
         
