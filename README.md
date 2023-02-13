@@ -3,4 +3,4 @@
 <br> Criado para estudos de React e Typescript. </p>
 
 <h2>Screenshot</h2>
-<img src="src/assets/screenshot.jpg" height="500">
+<img src="src/assets/screenshot.jpg" width="900">
